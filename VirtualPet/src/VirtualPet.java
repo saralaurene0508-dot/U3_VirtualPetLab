@@ -23,10 +23,10 @@ public class VirtualPet {
     }
 
     public void feed() {
+        weight++;
         if (10 >= energyLevel && energyLevel <= 0) {
             energyLevel++;
         }
-        weight++;
     }
 
     public int getEnergyLevel() {
@@ -38,7 +38,7 @@ public class VirtualPet {
     }
 
     public void play() {
-        if (10 <= happinessLevel && happinessLevel >= 0) {
+        if (10 >= happinessLevel && happinessLevel > 0) {
             happinessLevel++;
         }
         if (weight > 5) {
@@ -47,7 +47,7 @@ public class VirtualPet {
     }
 
     public void updateStatus() {
-        if (10 <= happinessLevel && happinessLevel >= 0) {
+        if (10 >= happinessLevel && happinessLevel > 0) {
             happinessLevel--;
         }
         if (weight > 5) {
