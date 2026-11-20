@@ -23,9 +23,12 @@ public class VirtualPet {
     }
 
     public void feed() {
-        weight++;
-        if (10 >= energyLevel && energyLevel <= 0) {
+        if (10 >= energyLevel && energyLevel >= 0) {
+            weight++;
             energyLevel++;
+        }
+        else{
+            weight++;
         }
     }
 
@@ -38,7 +41,7 @@ public class VirtualPet {
     }
 
     public void play() {
-        if (10 >= happinessLevel && happinessLevel > 0) {
+        if (10 >= happinessLevel && happinessLevel >= 0) {
             happinessLevel++;
         }
         if (weight > 5) {
@@ -50,12 +53,13 @@ public class VirtualPet {
         if (10 >= happinessLevel && happinessLevel > 0) {
             happinessLevel--;
         }
-        if (weight > 5) {
-            weight--;
+        if (energyLevel > 5) {
+            energyLevel--;
         }
         months++;
         if (months%12==0) {
             years++;
+            months -= 12;
         }
     }
 }
